@@ -11,7 +11,7 @@
     <nav id="navbar" class="nav">
         <ul class="menu">
             <li>
-                <a href="./home.html">Home</a>
+                <a href="./index.html">Home</a>
             </li>
             <li><a href="./biografia.html">Biografía</a>
             </li>
@@ -30,7 +30,8 @@ body {
 </style>
 <body>
 <section>
-<form id="Contacto">
+    <h2 class="header-contacto">¡Ponte en contacto conmigo!</h2>
+<form id="Contacto1">
           <label for="nombre">Nombre:</label>
           <input
             type="text"
@@ -47,7 +48,6 @@ body {
             placeholder="Introduce tu apellido..."
             required
           />
-          <br>
           <label for="numero">Telefono</label>
           <input
             type="number"
@@ -56,7 +56,34 @@ body {
             placeholder="Introduce tu telefono..."
             required
             />
+            <label for="email">Correo electrónico</label>
+            <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Introduce tu email..."
+            required
+            />
         </form>
+    <form id="Contacto2">
+          <label for="asunto">Asunto:</label>
+          <input
+            type="text"
+            id="asunto"
+            name="asunto"
+            placeholder="Asunto..."
+            required
+          />
+        <label for="mensaje">Mensaje:</label>
+        <textarea 
+            id="mensaje"
+            name="mensaje"
+            rows="5"
+            cols="150"
+            placeholder="Escribe tu mensaje aquí...">
+        </textarea>
+        </form>
+        <button type="submit">Enviar</button>
     </section>
 
  <footer>

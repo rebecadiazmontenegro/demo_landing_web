@@ -8,24 +8,50 @@
 
 * {
     background-color: var(--linen);
-    text-align: justify;
 }
 
+h1{
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--wine);
+   
+}
+
+h2{
+    font-size: 40px;
+    color: var(--wine);
+   
+}
+
+h3 {
+  font-size: 30;
+  color: var(--wine);
+}
+
+h4 {
+    border-bottom: 2px solid #773344ff;
+    padding-bottom: 16px;
+    color: var(--wine);
+}
+
+p{
+  font-size: 18px;
+  color: var(--wine);
+}
+
+
+
+/* ---------- Header ---------- */
+
 header {
-    display: flex;
-    position: fixed;
-    height: 80px;                          /*Altura de la caja*/
-    justify-content: space-between;         /* Lugar que ocupa el texto en la caja*/
-    align-items: center;                    
-    background-color: var(--indian-red);
-    padding: 0px 16px;
-    position: sticky;
-    border-bottom-left-radius: 16px;
-    border-bottom-right-radius: 16px;
-    border-bottom: 8px solid #773344ff;;
-    top: 0;
+    display: flex; 
+    position: fixed;            /* Así se queda fija cuando haga scroll*/
+    height: 100px;                                                                    
+    padding: 0px 16px;          /* Separo el texto del contenedor a la derecha e izquierda */
+    position: sticky;           /* Hace que el header no se mueva*/
+    top: 0;                     /* Pega el header arriba del todo*/
     width: 100%;
-    z-index: 1;
+    z-index: 10; /* Hace que la barra de navegación tape otros elementos*/
 }
 
 #navbar {
@@ -35,57 +61,35 @@ header {
 }
 .menu {
   display: flex;       
-  list-style: none;    
+  list-style: none;    /*Para que no salgan las viñetas de la lista*/
   padding: 0;
   margin: 0;
 }
 
-.menu li a {
-  display: flex;               
-  justify-content: center;     
-  align-items: center;                         
-  padding: 0 32px;              
-  text-decoration: none;
-  color: var(--linen);
-  font-size: 24px;
-  background-color: var(--indian-red);
-
+.menu li a {                                      
+  padding: 0 32px;         /*Espacio entre los elementos de la lista*/     
+  text-decoration: none;    
+  color: var(--wine);
+  font-size: 18px;
+  transition: color 0.3s;
+}
+.menu li a:hover {
+    color: var(--indian-red); 
 }
 
-h1{
-    font-size: 60px;
-    font-weight: bold;
-   
-}
 
-h2{
-    font-size: 40px;
-    color: var(--wine);
-    align-items: center;
-}
+/* ---------- Home ---------- */
 
-h3 {
-  font-size: 30;
-}
-
-p{
-    font-size: 20px;
-
-}
 #home h1,
 #home h2 {
   margin-top: 0;
-  margin-bottom: 0.50rem;
+  margin-bottom: 8px;
 }
 
 #home h2,
 #home p {
   margin-top: 0;
-  margin-bottom: 0.4rem;
-}
-
-#home p{
-  font-size: 18px;
+  margin-bottom: 8px;
 }
 
 #home {
@@ -93,41 +97,207 @@ p{
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 700px;
+  width: 100%;
+  max-width: 700px;
   padding: 30px 30px;
-  border: 8px solid #773344ff;
+  border: 4px solid #773344ff;
   border-radius: 16px;
-  background-color: var(--linen);
   text-align: center;
   color: var(--wine);
-  box-shadow: 10px 10px 0px;
-  margin: 20px auto;
+  box-shadow: 10px 10px 5px;
+  margin: 80px auto;                /*Centrar cuadro y margenes de arriba*/
+  transition: transform 0.3s;
 }
 
+#home:hover {
+    transform: translateY(-10px); 
+}
+/* ---------- Biografía ---------- */
+
 .biografia {
-  max-width: 600px;
-  padding: 20px;
-  text-align: center;      /* centra el texto */
-  margin: 20px auto;
-  border-radius: 10px;
-  color: var(--wine);
-  background-color: var(--linen);
+    display: flex;       
+    flex-direction: column;        
+    justify-content: center;     
+    align-items: center; 
+    margin: 0 auto;
+    max-width: 700px;
+
+} 
+.biografia h2, 
+.biografia h3 {
+    margin-top: 0;
+    margin-bottom: 3px;
+}
+.biografia h2 {
+    border-top: 2px solid #773344ff;
+    padding-top: 16px;
+}
+
+.biografia h4 {
+    border-bottom: 2px solid #773344ff;
+    padding-bottom: 16px;
+}
+
+.biografia p {
+    text-align: justify;
+    
+} 
+
+/* ---------- Portfolio ---------- */
+
+.portfolio h2 {
+    margin: 30px auto;
+    text-align: center;
+    align-items: center;
+    font-weight: bold;
+  
 }
 
 .proyecto-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 10px; 
-    justify-items: center; /* centra las imágenes en cada celda */
+    grid-template-columns: repeat(2, 1fr); /*Para que cada fila tenga solo dos columnas*/
+    flex-wrap: wrap; /* Permite que salten de línea */
+    padding: 2px 2px;
+    justify-items: center;  /* Centra las imágenes en cada cuadrado */ 
 }
   
 .portfolio-img {
-    width: 280px;   /* ancho fijo */
-    height: 280px;  /* alto fijo */
-    margin: 8px 8px;
-    object-fit: cover; /* mantiene la proporción y recorta si hace falta */
+    width: 650px;   
+    height: 250px;  
+    object-fit: cover; /*Para que la imagen rellene el contenedor*/
     border: 4px solid #773344ff ;
-    box-shadow: 10px 10px 0px #773344ff ;
-    border-radius: 8px; /* opcional, bordes redondeados */
+    box-shadow: 10px 10px 5px #773344ff ;
+    border-radius: 8px; 
+    margin: 40px auto;
+    transition: transform 0.3s; 
+    cursor: pointer; 
+    
 }
 
+.portfolio-img:hover {
+    transform: translateY(-10px); 
+}
+
+
+/* ---------- Contacto ---------- */
+
+.header-contacto {
+    margin: 30px auto;
+    text-align: center;
+    align-items: center;
+    color: var(--wine);
+    font-weight: bold;
+}
+
+#Contacto1 {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: column;
+    gap: 10px;               /* Distancia entre las diferentes filas */
+    padding: 30px;
+    border: 2px solid #773344ff;
+    border-radius: 16px;
+    max-width: 700px;         
+    
+}
+
+#Contacto1 input {
+    padding: 10px;
+    border: 1px solid #773344ff;
+    border-radius: 8px; /*El radio de las esquinas del formulario en sí*/
+    font-size: 16px; 
+}
+
+#Contacto1 label {
+    font-weight: bold;
+    color: var(--wine);
+}
+
+#Contacto2 {
+    display: flex;
+    margin: 40px auto;
+    flex-direction: column;
+    gap: 10px;               
+    padding: 30px;
+    border: 2px solid #773344ff;
+    border-radius: 16px;
+    max-width: 700px;           
+    
+}
+#Contacto2 input {
+    padding: 10px;
+    border: 1px solid #773344ff;
+    border-radius: 8px;
+    font-size: 16px;
+   
+}
+#Contacto2 textarea {
+    border: 1px solid #773344ff;
+    border-radius: 8px;
+    font-size: 16px;
+    
+}
+
+#Contacto2 label {
+    font-weight: bold;
+    color: var(--wine);
+}
+
+section button {
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+    text-align: center;
+    padding: 8px 24px;
+    background-color: var(--wine);
+    color: var(--linen);
+    border: 2px solid #773344ff;
+    border-radius: 6px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+section button:hover {
+    background-color: var(--indian-red);
+}
+
+/* ---------- Footer ---------- */
+
+footer {
+    display: flex;
+    bottom: 0;  /*Lo pega al pie de la pantalla*/    
+    width: 100%;     
+    background-color:var(--linen); 
+    color: var(--wine);      
+    padding: 20px 0; /*Para que tenga más distancia con el contenido*/
+    justify-content: center; 
+    
+}
+
+
+.footer {
+    display: flex;
+    flex-direction: column; 
+    align-items: center;                
+}
+
+
+.footer a {
+    text-decoration: none; 
+    margin-bottom: 4px;
+    font-size: 16px;
+    color: var(--wine);           
+    font-weight: bold;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.contacto-footer h3 {
+    display: inline-block;            /* para que el borde solo abarque el texto */
+    border-bottom: 2px solid #773344ff ; /* color y grosor del subrayado */
+    padding-bottom: 2px;  
+}
+.footer a:hover {
+    color: var(--indian-red); 
+}
